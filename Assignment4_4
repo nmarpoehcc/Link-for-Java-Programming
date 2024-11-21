@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Assignment4_4 {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user to enter the side length of the hexagon
+        System.out.print("Enter the length of the side of the hexagon: ");
+        double sideLength = scanner.nextDouble();
+        
+        // Calculate the area using the area of hexagon formula
+        double area = (6 * Math.pow(sideLength, 2)) / (4 * Math.tan(Math.PI / 6));
+        
+        // Display the area of the hexagon
+        System.out.printf("The area of the hexagon with side length %.2f is: %.2f%n", sideLength, area);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
