@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Assignment4_13 {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt to enter a letter
+        System.out.print("Enter a letter: ");
+        char letter = scanner.next().toLowerCase().charAt(0); // Read input and convert to lowercase
+        
+        // Check if the letter is a vowel or consonant
+        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+            System.out.println(letter + " is a vowel.");
+        } else if ((letter >= 'a' && letter <= 'z')) {
+            System.out.println(letter + " is a consonant.");
+        } else {
+            System.out.println("Please enter a valid letter.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
