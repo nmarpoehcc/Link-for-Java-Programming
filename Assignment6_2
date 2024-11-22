@@ -1,0 +1,25 @@
+public class Assignment6_2 {
+
+    // Method to compute the sum of the digits in a long integer
+    public static int sumDigits(long n) {
+        int sum = 0;
+
+        // While n is greater than 0, continue extracting and summing the digits
+        while (n > 0) {
+            sum += n % 10;  // Extract the last digit using modulus operator
+            n /= 10;         // Remove the last digit by dividing n by 10
+        }
+
+        return sum;  // Return the sum of the digits
+    }
+
+    // Main method to test sumDigits method
+    public static void main(String[] args) {
+        long number = 234;  // Test case: number = 234
+        System.out.println("The sum of the digits of " + number + " is: " + sumDigits(number));
+
+        // Another example
+        long anotherNumber = 999998;  // Test case: number = 999998
+        System.out.println("The sum of the digits of " + anotherNumber + " is: " + sumDigits(anotherNumber));
+    }
+}
