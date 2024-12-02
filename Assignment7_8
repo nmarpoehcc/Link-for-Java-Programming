@@ -1,0 +1,55 @@
+public class Assignment7_8 {
+
+    // Method to calculate the average of an integer array
+    public static int ave1rage(int[] array) {
+        // Initialize a variable to store the sum of the array elements
+        int sum = 0;
+        
+        // Iterate through each element in the array and add it to sum
+        for (int num : array) {
+            sum += num;
+        }
+        
+        // Return the average by dividing the sum by the array's length
+        return sum / array.length; // Integer division
+    }
+
+    // Method to calculate the average of a double array
+    public static double average(double[] array) {
+        // Initialize a variable to store the sum of the array elements
+        double sum = 0;
+        
+        // Iterate through each element in the array and add it to sum
+        for (double num : array) {
+            sum += num;
+        }
+        
+        // Return the average by dividing the sum by the array's length
+        return sum / array.length; // Result will be a double
+    }
+
+    public static void main(String[] args) {
+        // Create a scanner object to read user input
+        java.util.Scanner input = new java.util.Scanner(System.in);
+
+        // Create an array to hold 10 double values
+        double[] values = new double[10];
+
+        // Prompt the user to enter 10 double values
+        System.out.println("Enter 10 double values:");
+
+        // Use a loop to get the 10 values from the user
+        for (int i = 0; i < 10; i++) {
+            values[i] = input.nextDouble(); // Store each value in the array
+        }
+
+        // Call the average method for the double array and store the result
+        double avg = average(values);
+
+        // Display the average value
+        System.out.println("The average is: " + avg);
+        
+        // Close the scanner to avoid resource leak
+        input.close();
+    }
+}
