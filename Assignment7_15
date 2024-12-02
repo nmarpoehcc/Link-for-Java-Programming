@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Assignment7_15 {
+
+    // Method to eliminate duplicates from the array
+    public static int[] eliminateDuplicates(int[] list) {
+        // Create an array with the same length as the original array
+        int[] tempArray = new int[list.length];
+        int uniqueCount = 0;
+
+        // Loop through each element in the original list
+        for (int i = 0; i < list.length; i++) {
+            boolean isDuplicate = false;
+
+            // Check if the element already exists in the tempArray
+            for (int j = 0; j < uniqueCount; j++) {
+                if (list[i] == tempArray[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            // If not a duplicate, add it to tempArray
+            if (!isDuplicate) {
+                tempArray[uniqueCount] = list[i];
+                uniqueCount++;
+            }
+        }
+
+        // Create a new array with the exact number of unique elements
+        int[] result = new int[uniqueCount];
+        for (int i = 0; i < uniqueCount; i++) {
+            result[i] = tempArray[i];
+        }
+
+        // Return the array with distinct values
+        return result;
+    }
+
+    public static void main(String[] args) {
+        // Create a scanner to read user input
+        Scanner input = new Scanner(System.in);
+
+        // Prompt the user to enter 10 integers
+        System.out.print("Enter ten numbers: ");
+        int[] list = new int[10];
+
+        // Read the 10 integers into the list
+        for (int i = 0; i < 10; i++) {
+            list[i] = input.nextInt();
+        }
+
+        // Call the eliminateDuplicates method to get the distinct numbers
+        int[] distinctNumbers = eliminateDuplicates(list);
+
+        // Display the distinct numbers
+        System.out.print("The distinct numbers are: ");
+        for (int num : distinctNumbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Close the scanner to avoid resource leak
+        input.close();
+    }
+}
